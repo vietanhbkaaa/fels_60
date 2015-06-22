@@ -3,3 +3,5 @@ maximum:
   email: 255
 minimum:
   password: 6
+remember:
+  true: 1

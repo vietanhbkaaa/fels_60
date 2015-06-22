@@ -24,9 +24,6 @@ en:
     base_title: "Framgia E-Learning System"
     home:
       welcome: "Welcome to Framgia Elearning System"
-
-  messages:
-    welcome: "Welcome to Framgia Elearning System"
   links:
     contact: "Contact"
     about: "About"
@@ -35,3 +32,7 @@ en:
     logo: "Framgia E-Learning System"
     log_in: "Log in"
     sign_up: "Sign up now"
+  messages:
+    welcome: "Welcome to Framgia Elearning System"
+    log_in:
+      danger: "Invalid email/password combination."
