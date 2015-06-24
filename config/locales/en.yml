@@ -43,3 +43,6 @@ en:
       success: "updated profile successfully!"
     users:
       delete: "User deleted!"
+    lesson:
+      success: "Lesson created!"
+      danger: "Something wrong!"
