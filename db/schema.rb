@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 20150617103152) do
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
     t.integer  "progress"
-    t.datetime "learned_at"
     t.integer  "user_id"
     t.integer  "course_id"
     t.datetime "created_at", null: false
@@ -41,7 +40,8 @@ ActiveRecord::Schema.define(version: 20150617103152) do
   end
 
   add_index "lessons", ["course_id"], name: "index_lessons_on_course_id"
-  add_index "lessons", ["user_id", "course_id"], name: "index_lessons_on_user_id_and_course_id", unique: true
+  add_index "lessons", ["name", "user_id", "course_id"], name: "index_lessons_on_name_and_user_id_and_course_id", unique: true
+  add_index "lessons", ["user_id", "course_id", "created_at"], name: "index_lessons_on_user_id_and_course_id_and_created_at"
   add_index "lessons", ["user_id"], name: "index_lessons_on_user_id"
 
   create_table "options", force: :cascade do |t|
