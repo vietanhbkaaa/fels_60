@@ -22,4 +22,13 @@ namespace :create_users do
     end
   end
 
+  desc "TODO"
+  task create_courses: :environment do
+    5.times do |n|
+      name = "Course-#{n+1}"
+      description = Faker::Lorem.sentence(5)
+      Course.create(name: name, description: description)
+    end
+  end
+
 end

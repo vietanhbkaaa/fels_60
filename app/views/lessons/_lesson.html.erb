@@ -1,0 +1,8 @@
+<li id="lesson-<%= lesson.id %>">
+  <%= link_to gravatar_for(lesson.user, size: 50), lesson.user %>
+  <span class="user"><%= link_to lesson.user.name, lesson.user %></span>
+  <span class="content">
+    Learned <%= pluralize(lesson.options.count, "word") %>
+    in lesson "<%= lesson.name %>" - (<%= lesson.created_at.strftime("%Y/%m/%d") %>)
+  </span>
+</li>
