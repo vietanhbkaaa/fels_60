@@ -5,7 +5,6 @@ class Lesson < ActiveRecord::Base
   has_many :options, dependent: :destroy
   has_many :answers, through: :options, dependent: :destroy
 
-  validates :name, presence: true
   validates :user_id, presence: true
   validates :course_id, presence: true
 end
