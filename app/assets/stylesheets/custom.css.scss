@@ -280,3 +280,27 @@ span.picture {
     margin-top: 0px;
   }
 }
+
+/* words */
+
+.words {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+  }
+  .radio {
+    display: inline-block;
+    margin-top: -10px;
+    margin-bottom: 10px;
+      span {
+        margin-left: 20px;
+        font-weight: normal;
+      }
+    }
+}

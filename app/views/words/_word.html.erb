@@ -1,0 +1,13 @@
+<li id="word-<%= word.id %>">
+  <span class="content">
+    <h2 ><%= word.content %></h2>
+  </span>
+  <%= form_for(@lesson.options.build) do |f| %>
+    <% word.print_answers.each do  |answer| %>
+      <%= label :option, class: "radio inline" do %>
+        <%= f.radio_button :answer_id, answer.id %>
+        <%= answer.content %>
+      <% end %>
+    <% end %>
+  <% end %>
+</li>

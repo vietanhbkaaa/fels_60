@@ -5,3 +5,5 @@ minimum:
   password: 6
 remember:
   true: 1
+per_page:
+  word: 5
