@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20150617103152) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
 
   create_table "words", force: :cascade do |t|
+    t.string   "content"
     t.integer  "lesson_id"
     t.integer  "course_id"
     t.datetime "created_at", null: false

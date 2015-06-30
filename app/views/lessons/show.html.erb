@@ -1,2 +1,14 @@
-<% provide :title, "Lesson-" + current_user.lessons.count.to_s %>
-<h1>Lesson <%= current_user.lessons.count %></h1>
+<% provide :title, "Lesson-#{@lesson.course.name}" %>
+<h1><%= @lesson.course.name %></h1>
+<div id="lesson_stats">
+  <h3 class= "center">
+    <%= @lesson.options.count %>/<%= @lesson.words.count %>
+  </h3>
+</div>
+<% if @lesson.words.any? %>
+  <ol class="words">
+    <%= render @words %>
+  </ol>
+  <%= will_paginate @words %>
+<% end %>
+
