@@ -20,29 +20,34 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  controllers:
+    welcome: "Welcome to the E-learning!"
+    flash: "Invalid email/password combination"
+    success: "update success"
+
+  helpers:
+    base_title: "Ruby on Rails Tutorial Learning"
+
   layouts:
-    base_title: "Framgia E-Learning System"
-    home:
-      welcome: "Welcome to Framgia Elearning System"
-  links:
-    contact: "Contact"
-    about: "About"
-    help: "Help"
-    home: "Home"
-    logo: "Framgia E-Learning System"
-    log_in: "Log in"
-    sign_up: "Sign up now"
-    word: "Words"
-    course: "Courses"
-  messages:
-    welcome: "Welcome to Framgia Elearning System"
-    log_in:
-      danger: "Invalid email/password combination."
-    danger: "Please log in."
-    update:
-      success: "updated profile successfully!"
-    users:
-      delete: "User deleted!"
-    lesson:
-      success: "Lesson created!"
-      danger: "Something wrong!"
+    name : "E-learning"
+    name1: "About"
+    name2: "Contact"
+    name3: "Home"
+    name4: "Help"
+    name5: "Log in"
+    name6: "Sign up now!"
+    users: "Users"
+    profile: "Profile"
+    settings: "Settings"
+    logout: "Log out"
+    login: "Log in"
+    new: "News"
+    account: "Account"
+  shared:
+    error: "error"
+
+  users:
+    name: "Sign up"
+    update: "Update"
+    confirmation: "Confirmation"
+    submit: "Submit"

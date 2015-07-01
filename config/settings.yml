@@ -1,9 +1,11 @@
-maximum:
-  name: 50
-  email: 255
-minimum:
-  password: 6
-remember:
-  true: 1
-per_page:
-  word: 5
+controller:
+  params: 1
+
+helpers:
+  size: 80
+
+models:
+  maximum1: 50
+  maximum2: 255
+  minimum: 6
+
