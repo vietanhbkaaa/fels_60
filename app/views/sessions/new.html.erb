@@ -1,8 +1,8 @@
-<% provide :title, "Log in" %>
-<h1>Log in</h1>
+<% provide :title, t("links.log_in")%>
+<h1><%= t "links.log_in" %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= render "login_form" %>
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <p><%= t("messages.new_user") %> <%= link_to t("links.sign_up"), signup_path %></p>
   </div>
 </div>

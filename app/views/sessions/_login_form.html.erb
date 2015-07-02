@@ -8,8 +8,8 @@
 
   <%= f.label :remember_me, class: "checkbox inline" do %>
     <%= f.check_box :remember_me %>
-    <span> Remember me on this computer </span>
+    <span><%= t "messages.remember" %> </span>
   <% end %>
 
-  <%= f.submit "Log in", class: "btn btn-primary" %>
+  <%= f.submit t("links.log_in"), class: "btn btn-primary" %>
 <% end %>
