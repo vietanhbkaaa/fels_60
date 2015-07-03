@@ -11,3 +11,18 @@
     <% end %>
   <% end %>
 </li>
+
+<script type="text/javascript">
+  var countChecked = function() {
+    var n = $( "input:checked" ).length;
+    $( "#lesson_stats" ).html( n + "/<%= @lesson.words.count %>");
+  };
+  countChecked();
+  $("input.<%= word.id%>").on("click",countChecked );
+
+  $("input.<%= word.id%>").on('change', function() {
+    $(this).closest("form").submit();
+  });
+</script>
+
+

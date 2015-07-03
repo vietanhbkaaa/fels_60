@@ -1,5 +1,5 @@
 class Option < ActiveRecord::Base
-  belongs_to :lesson
+  belongs_to :word
   has_one :answer
 
   validates :word_id, presence: true

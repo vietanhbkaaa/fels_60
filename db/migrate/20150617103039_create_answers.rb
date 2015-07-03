@@ -7,6 +7,5 @@ class CreateAnswers < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :answers, [:lesson_id, :word_id], unique: true
   end
 end

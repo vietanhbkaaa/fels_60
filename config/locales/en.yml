@@ -46,5 +46,9 @@ en:
     users:
       delete: "User deleted!"
     lesson:
-      success: "Lesson created!"
-      danger: "Something wrong!"
+      new:
+        success: "Lesson created!"
+        danger: "Lesson could not be created!"
+      update:
+        success: "Finish lesson"
+        danger: "Lesson could not be finished!"
