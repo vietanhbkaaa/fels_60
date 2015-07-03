@@ -24,6 +24,8 @@ en:
     base_title: "Framgia E-Learning System"
     home:
       welcome: "Welcome to Framgia Elearning System"
+    lessons: "Lessons-"
+    activities: "Activities"
   links:
     contact: "Contact"
     about: "About"
