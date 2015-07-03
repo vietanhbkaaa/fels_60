@@ -2,6 +2,7 @@
   <%= link_to gravatar_for(lesson.user, size: 50), lesson.user %>
   <span class="user"><%= link_to lesson.user.name, lesson.user %></span>
   <span class="content">
-    "<%= lesson.course.name %>" - (<%= lesson.created_at.strftime("%Y/%m/%d") %>)
+    Learned <%= pluralize(lesson.options.count, "word") %>
+    in course "<%= lesson.course.name %>" - (<%= lesson.created_at.strftime("%Y/%m/%d") %>)
   </span>
 </li>
