@@ -1,5 +1,6 @@
-<h1>
-  <%= link_to gravatar_for(current_user,size: Settings.maximum.name), current_user %>
-  <%= current_user.name %>
-</h1>
-<span></span>
+<%= link_to gravatar_for(current_user, size: 50), current_user %>
+<h1><%= current_user.name %></h1>
+<span>
+  Learned
+  <%= pluralize(current_user.lessons.map{ |lesson| lesson.answers.count }.sum, "word") %>
+</span>

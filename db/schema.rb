@@ -14,13 +14,16 @@
 ActiveRecord::Schema.define(version: 20150617103152) do
 
   create_table "answers", force: :cascade do |t|
-    t.string   "content"
-    t.boolean  "correct",    default: false
+    t.integer  "lesson_id"
+    t.integer  "option_id"
     t.integer  "word_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
+  add_index "answers", ["lesson_id", "word_id"], name: "index_answers_on_lesson_id_and_word_id", unique: true
+  add_index "answers", ["lesson_id"], name: "index_answers_on_lesson_id"
+  add_index "answers", ["option_id"], name: "index_answers_on_option_id"
   add_index "answers", ["word_id"], name: "index_answers_on_word_id"
 
   create_table "courses", force: :cascade do |t|
@@ -45,15 +48,14 @@ ActiveRecord::Schema.define(version: 20150617103152) do
   add_index "lessons", ["user_id"], name: "index_lessons_on_user_id"
 
   create_table "options", force: :cascade do |t|
-    t.integer  "lesson_id"
-    t.integer  "answer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "content"
+    t.boolean  "correct",    default: false
+    t.integer  "word_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
-  add_index "options", ["answer_id"], name: "index_options_on_answer_id"
-  add_index "options", ["lesson_id", "answer_id"], name: "index_options_on_lesson_id_and_answer_id", unique: true
-  add_index "options", ["lesson_id"], name: "index_options_on_lesson_id"
+  add_index "options", ["word_id"], name: "index_options_on_word_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"

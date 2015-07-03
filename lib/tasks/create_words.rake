@@ -14,13 +14,13 @@ namespace :create_words do
   end
 
   desc "TODO"
-  task create_answers: :environment do
+  task create_options: :environment do
     words = Word.all
     5.times do
       content = Faker::Lorem.word
-      words.each { |word| word.answers.create!(content: content )}
+      words.each { |word| word.options.create!(content: content )}
     end
-    answer = Faker::Lorem.word
-    words.each { |word| word.answers.create!(content: answer, correct: true )}
+    correct_option = Faker::Lorem.word
+    words.each { |word| word.options.create!(content: correct_option, correct: true )}
   end
 end

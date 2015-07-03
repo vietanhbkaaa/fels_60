@@ -1,7 +1,10 @@
 class Option < ActiveRecord::Base
   belongs_to :lesson
-  belongs_to :answer
+  has_one :answer
 
-  validates :lesson_id, presence: true
-  validates :answer_id, presence: true
+  validates :word_id, presence: true
+  validates :content, presence: true
+
+  scope :wrong_options, ->{where(correct: false).order("RANDOM()").limit(3)}
+  scope :correct_option, ->{order("RANDOM()").find_by correct: true}
 end
