@@ -17,7 +17,5 @@ class LessonsController < ApplicationController
   def show
 
     @lesson = Lesson.find params[:id]
-    @words = @lesson.words.order("RANDOM()").
-      paginate page: params[:page], per_page: Settings.per_page.word
   end
 end

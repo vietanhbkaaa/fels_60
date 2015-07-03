@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @lessons= @user.lessons
   end
 
   def edit

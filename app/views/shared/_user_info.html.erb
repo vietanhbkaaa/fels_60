@@ -1,5 +1,5 @@
 <h1>
-  <%= link_to gravatar_for(current_user,size: Settings.maximum.name), current_user %>
-  <%= current_user.name %>
+  <%= link_to gravatar_for(@user, size: Settings.maximum.name), @user %>
+  <%= @user.name %>
 </h1>
 <span></span>

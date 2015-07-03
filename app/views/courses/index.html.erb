@@ -1,5 +1,8 @@
 <% provide :title, "Courses" %>
-<h1>Courses</h1>
-<ul class="courses">
-  <%= render @courses %>
-</ul>
+<h1> Courses</h1>
+<%= will_paginate %>
+  <ul class = "courses">
+    <%= render @courses %>
+  </ul>
+<%= will_paginate %>
+

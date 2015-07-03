@@ -1,14 +1,5 @@
 <% provide :title, "Lesson-#{@lesson.course.name}" %>
-<h1><%= @lesson.course.name %></h1>
+<h1><%= "lesson-#{@lesson.id}" %></h1>
 <div id="lesson_stats">
-  <h3 class= "center">
-    <%= @lesson.options.count %>/<%= @lesson.words.count %>
-  </h3>
 </div>
-<% if @lesson.words.any? %>
-  <ol class="words">
-    <%= render @words %>
-  </ol>
-  <%= will_paginate @words %>
-<% end %>
 
