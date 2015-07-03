@@ -1,14 +1,4 @@
 <% provide :title, "Lesson-#{@lesson.course.name}" %>
-<h1><%= @lesson.course.name %></h1>
+<h1><%= t("layouts.lessons")%><%="#{@lesson.id}" %></h1>
 <div id="lesson_stats">
-  <h3 class= "center">
-    <%= @lesson.answers.count %>/<%= @lesson.words.count %>
-  </h3>
 </div>
-<% if @lesson.words.any? %>
-  <ol class="words">
-    <%= render @words %>
-  </ol>
-  <%= will_paginate @words %>
-<% end %>
-

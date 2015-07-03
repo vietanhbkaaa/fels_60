@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find params[:id]
     if @user.update_attributes user_params
-      flash[:success] = t("messages.update.success")
+      flash[:success] = t "messages.update.success"
       redirect_to @user
     else
       render :edit
@@ -47,10 +47,6 @@ class UsersController < ApplicationController
 
   def correct_user
     @user = User.find params[:id]
-    redirect_to(root_url) unless current_user?(@user)
-  end
-
-  def admin_user
-    redirect_to(root_url) unless current_user.admin?
+    redirect_to root_url unless current_user? @user
   end
 end
