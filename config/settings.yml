@@ -7,3 +7,4 @@ remember:
   true: 1
 per_page:
   word: 5
+per_lesson: 20

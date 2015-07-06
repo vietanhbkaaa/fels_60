@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20150617103152) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "answers", ["lesson_id", "word_id"], name: "index_answers_on_lesson_id_and_word_id", unique: true
   add_index "answers", ["lesson_id"], name: "index_answers_on_lesson_id"
   add_index "answers", ["option_id"], name: "index_answers_on_option_id"
   add_index "answers", ["word_id"], name: "index_answers_on_word_id"
@@ -87,13 +86,11 @@ ActiveRecord::Schema.define(version: 20150617103152) do
 
   create_table "words", force: :cascade do |t|
     t.string   "content"
-    t.integer  "lesson_id"
     t.integer  "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "words", ["course_id"], name: "index_words_on_course_id"
-  add_index "words", ["lesson_id"], name: "index_words_on_lesson_id"
 
 end

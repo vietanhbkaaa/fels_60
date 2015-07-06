@@ -3,12 +3,10 @@ namespace :create_words do
   desc "TODO"
   task create_words: :environment do
     courses = Course.all
-    20.times do |n|
-      courses.each do |course|
-        4.times do
-          content = Faker::Lorem.word
-          course.words.create!(content: content, lesson_id: n)
-        end
+    courses.each do |course|
+      20.times do
+        content = Faker::Lorem.word
+        course.words.create!(content: content)
       end
     end
   end
@@ -16,7 +14,7 @@ namespace :create_words do
   desc "TODO"
   task create_options: :environment do
     words = Word.all
-    5.times do
+    3.times do
       content = Faker::Lorem.word
       words.each { |word| word.options.create!(content: content )}
     end

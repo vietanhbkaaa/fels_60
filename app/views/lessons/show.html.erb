@@ -1,13 +1,19 @@
 <% provide :title, "Lesson-#{@lesson.course.name}" %>
 <h1><%= @lesson.course.name %></h1>
 <div id="lesson_stats">
-  <h3 class= "center">
-    <%= @lesson.answers.count %>/<%= @lesson.words.count %>
-  </h3>
+  <%= @lesson.answers.select{|answer| !answer.option.nil?}.count %>/
+  <%= @lesson.words.count %>
 </div>
-<% if @lesson.words.any? %>
-  <ol class="words">
-    <%= render @words %>
-  </ol>
-  <%= will_paginate @words %>
+
+<%= form_for(@lesson) do |f| %>
+  <%= f.fields_for :answers do |ff| %>
+    <h2><%= ff.object.word.content %></h2>
+    <% ff.object.word.print_options.each do |option| %>
+      <div class = "radio" %>
+        <%= ff.radio_button :option_id, option.id %>
+        <%= label :options_id, option.content %>
+      </div>
+    <% end %>
+  <% end %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
