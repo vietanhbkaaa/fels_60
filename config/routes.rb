@@ -12,13 +12,19 @@ Rails.application.routes.draw do
   resources :users, except: :destroy do
     match "/:relationship" => "relationships#index", as: :relationship, via: :get
   end
+  resources :relationships, only: [:create, :destroy]
   resources :lessons, only: [:create, :show, :destroy, :update] do
     resources :answers
   end
   resources :courses, only: :index do
     resources :lessons
   end
-  resources :relationships, only: [:create, :destroy]
+  namespace :admin do
+    resources :imports, only: :create
+    resources :users
+    resources :courses
+    resources :words
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

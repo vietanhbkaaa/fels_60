@@ -1,0 +1,6 @@
+<h1>Import </h1>
+<%= form_tag admin_imports_path, method: :post, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= hidden_field_tag :model, model_name %>
+  <%= submit_tag "Import", class: "btn btn-primary" %>
+<% end %>

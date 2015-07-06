@@ -7,13 +7,24 @@
 
 <%= form_for(@lesson) do |f| %>
   <%= f.fields_for :answers do |ff| %>
-    <h2><%= ff.object.word.content %></h2>
-    <% ff.object.word.print_options.each do |option| %>
-      <div class = "radio" %>
-        <%= ff.radio_button :option_id, option.id %>
-        <%= label :options_id, option.content %>
-      </div>
-    <% end %>
+    <div class ="row">
+      <aside class ="col-md-4">
+        <h3><%= ff.object.word.content %></h3>
+      </aside>
+      <aside class="col-md-8">
+        <% ff.object.word.print_options.each do |option| %>
+          <div class = "radio" %>
+            <div class = "col-md-2">
+              <%= ff.radio_button :option_id, option.id %>
+            </div>
+            <div class="col-md-2">
+              <%= label :options_id, option.content %>
+            </div>
+          </div>
+        <% end %>
+      </aside>
+    </div>
+    <hr>
   <% end %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>

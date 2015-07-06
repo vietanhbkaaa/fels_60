@@ -2,7 +2,7 @@ class Word < ActiveRecord::Base
   belongs_to :lesson
   belongs_to :course
   has_many :options, dependent: :destroy
-  has_one :answer
+  has_many :answers
 
   validates :content, presence: true
 
