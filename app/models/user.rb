@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
 
   def feed
     following_ids = Relationship.following_ids(id)
-    Lesson.learned_lesson(id,following_id)
+    Lesson.learned_lessons(id,following_ids)
   end
 
   private
