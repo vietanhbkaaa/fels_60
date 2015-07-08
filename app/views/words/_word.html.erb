@@ -1,28 +1,5 @@
 <li id="word-<%= word.id %>">
   <span class="content">
-    <h2 ><%= word.content %></h2>
+    <%= word.content %>
   </span>
-  <%= form_for(@lesson.answers.build) do |f| %>
-    <% word.print_options.each do  |option| %>
-      <%= label :option, class: "radio inline" do %>
-        <%= f.radio_button :option_id, option.id %>
-        <%= option.content %>
-      <% end %>
-    <% end %>
-  <% end %>
 </li>
-
-<script type="text/javascript">
-  var countChecked = function() {
-    var n = $( "input:checked" ).length;
-    $( "#lesson_stats" ).html( n + "/<%= @lesson.words.count %>");
-  };
-  countChecked();
-  $("input.<%= word.id%>").on("click",countChecked );
-
-  $("input.<%= word.id%>").on('change', function() {
-    $(this).closest("form").submit();
-  });
-</script>
-
-

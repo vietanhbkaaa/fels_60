@@ -8,6 +8,14 @@ class Word < ActiveRecord::Base
 
   validates :content, presence: true
 
+  scope :get_all, ->user{}
+  scope :learned, ->user{
+    where "id IN (SELECT word_id FROM answers WHERE option_id is not null AND lesson_id IN (
+      SELECT id FROM lessons WHERE user_id = (?)))", user.id}
+  scope :not_learned, ->user{
+    where "id IN (SELECT word_id FROM answers WHERE option_id is null AND lesson_id IN (
+      SELECT id FROM lessons WHERE user_id = (?)))", user.id}
+
   def print_options
     options.wrong_options.push(options.correct_option).shuffle
   end

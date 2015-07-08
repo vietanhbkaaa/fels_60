@@ -26,6 +26,7 @@ en:
       welcome: "Welcome to Framgia Elearning System"
     lessons: "Lessons-"
     activities: "Activities"
+    submit: "Submit"
   links:
     contact: "Contact"
     about: "About"
@@ -63,7 +64,6 @@ en:
       update:
         success: "Finish lesson"
         danger: "Lesson could not be finished!"
-
     import:
       success: "Imported successfully."
       danger: "Import error."
@@ -101,3 +101,9 @@ en:
       new: "New Word"
     users: "Users"
     result: "Results"
+  state:
+    words:
+      all: "get_all"
+      learned: "learned"
+      notlearned: "not_learned"
+      search: "Search"
