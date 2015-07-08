@@ -11,6 +11,9 @@ class Lesson < ActiveRecord::Base
 
   before_create :set_words
 
+  scope :learned_lessons, ->(following_ids){where("user_id IN (#{following_ids})
+                                                  OR user_id = #{user_id}")}
+
   def num_correct_answers
     answers.select{|answer| answer.option.correct? unless answer.option.nil?}.count
   end
