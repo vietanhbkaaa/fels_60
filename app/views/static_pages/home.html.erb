@@ -14,7 +14,8 @@
         <%= link_to(t("links.word"),'#', class: "btn btn-lg btn-primary")%>
         <%= link_to(t("links.course"), courses_path, class: "btn btn-lg btn-primary")%>
       </section>
-      <h1>Activity Feed</h1>
+      <h3>Activity Feed</h3>
+      <%= render "shared/feed" %>
     </div>
   </div>
 <% else %>
