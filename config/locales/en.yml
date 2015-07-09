@@ -52,3 +52,7 @@ en:
       update:
         success: "Finish lesson"
         danger: "Lesson could not be finished!"
+
+    import:
+      success: "Imported successfully."
+      danger: "Import error."
