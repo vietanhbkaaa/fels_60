@@ -34,12 +34,16 @@ en:
     logo: "Framgia E-Learning System"
     log_in: "Log in"
     sign_up: "Sign up now"
-    word: "Words"
     courses: "Courses"
     course:
       new: "New Course"
       edit: "Edit Course"
       delete: "Delete Course"
+    words: "Words"
+    word:
+      new: "New Word"
+      edit: "Edit Word"
+      delete: "Delete Word"
   messages:
     welcome: "Welcome to Framgia Elearning System"
     log_in:
@@ -67,12 +71,25 @@ en:
         success: "Course was successfully updated."
       destroy:
         success: "Course was successfully deleted."
+    word:
+      new:
+        success: "Word was successfully created."
+      update:
+        success: "Word was successfully updated."
+      destroy:
+        success: "Word was successfully deleted."
 
   buttons:
     course:
       create: "Create Course"
       update: "Update Course"
+    word:
+      create: "Create Word"
+      update: "Update Word"
   titles:
     course:
       new: "New Course"
     courses: "Courses"
+    words: "words"
+    word:
+      new: "New Word"

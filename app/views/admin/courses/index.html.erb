@@ -11,7 +11,7 @@
         <th>Updated at</th>
       </tr>
       <% @courses.each do |course| %>
-        <tr>
+        <tr data-link="<%= admin_course_path(course) %>">
           <td><%= course.id %></td>
           <td><%= course.name %></td>
           <td><%= course.description %></td>

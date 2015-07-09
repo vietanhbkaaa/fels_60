@@ -12,6 +12,28 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
+jQuery(function($) {
+  $("tr[data-link]").click(function() {
+    window.location = this.dataset.link
+  });
+})
+
+function remove_fields(field) {
+  $(field).prev().val("true");
+  $(field).parent().hide();
+}
+
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var expression = "_[0-9]+_";
+  var regexp = new RegExp(expression, 'g');
+
+  content = content.replace(regexp, "_" + new_id + "_");
+  expression = association + "_attributes\]\[[0-9]+\]";
+  regexp = new RegExp(expression, 'g');
+  $(link).parent().before(content.replace(regexp, association + "_attributes][" + new_id + "]"));
+}

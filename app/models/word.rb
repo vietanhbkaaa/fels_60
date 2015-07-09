@@ -4,6 +4,8 @@ class Word < ActiveRecord::Base
   has_many :options, dependent: :destroy
   has_many :answers
 
+  accepts_nested_attributes_for :options, reject_if: lambda{|a| a[:content].blank?}, allow_destroy: true
+
   validates :content, presence: true
 
   def print_options
