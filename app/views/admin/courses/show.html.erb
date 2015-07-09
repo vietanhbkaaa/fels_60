@@ -1,0 +1,28 @@
+<% provide :title, @course.name %>
+
+<div class="row">
+  <aside class="col-md-8">
+    <h1><%= @course.name %> Course</h1>
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Created at</th>
+        <th>Updated at</th>
+      </tr>
+      <tr>
+        <td><%= @course.id %></td>
+        <td><%= @course.name %></td>
+        <td><%= @course.description %></td>
+        <td><%= @course.created_at.strftime("%Y/%m/%d") %></td>
+        <td><%= @course.updated_at.strftime("%B %e %Y") %></td>
+      </tr>
+    </table>
+  </aside>
+  <aside class="col-md-4">
+    <%= link_to t("links.course.edit"),edit_admin_course_path(@course), class: "btn btn-primary" %>
+    <%= link_to t("links.course.delete"),
+      [:admin, @course], method: :delete, data: {confirm: "You sure?"}, class: "btn btn-primary" %>
+  </aside>
+</div>
