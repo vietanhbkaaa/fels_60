@@ -1,0 +1,29 @@
+<% provide :title, t("titles.courses") %>
+<div class="row">
+  <aside class="col-md-8">
+    <h1>Courses</h1>
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Created at</th>
+        <th>Updated at</th>
+      </tr>
+      <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.id %></td>
+          <td><%= course.name %></td>
+          <td><%= course.description %></td>
+          <td><%= course.created_at.strftime("%Y/%m/%d") %></td>
+          <td><%= course.updated_at.strftime("%B %e %Y") %></td>
+        </tr>
+      <% end %>
+    </table>
+  </aside>
+  <aside class="col-md-4">
+    <br>
+    <%= link_to t("links.course.new"), new_admin_course_path, class: "btn btn-primary" %>
+    <%= render "shared/import_form", model_name: Course %>
+  </aside>
+</div>
