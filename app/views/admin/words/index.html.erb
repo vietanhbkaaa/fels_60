@@ -11,7 +11,7 @@
         <th>Updated-at</th>
       </tr>
       <% @words.each do |word| %>
-        <tr>
+        <tr data-link="<%= admin_word_path(word) %>">
           <td><%= word.id %></td>
           <td><%= word.content %></td>
           <td><%= word.course.name %></td>
@@ -22,6 +22,9 @@
     </table>
   </aside>
   <aside class="col-md-4">
+    <br>
+    <br>
+    <%= link_to t("links.word.new"), new_admin_word_path, class: "btn btn-primary" %>
     <%= render "shared/import_form", model_name: Word %>
   </aside>
 </div>

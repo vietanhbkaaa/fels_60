@@ -1,0 +1,47 @@
+<% provide :title, @word.content %>
+
+<div class="row">
+  <aside class="col-md-8">
+    <h1><%= @word.content %></h1>
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>ID</th>
+        <th>Content</th>
+        <th>Course</th>
+        <th>Created at</th>
+        <th>Updated at</th>
+      </tr>
+      <tr>
+        <td><%= @word.id %></td>
+        <td><%= @word.content %></td>
+        <td><%= @word.course.name %></td>
+        <td><%= @word.created_at.strftime("%Y/%m/%d") %></td>
+        <td><%= @word.updated_at.strftime("%B %e %Y") %></td>
+      </tr>
+      <tr>
+        <td>Options</td>
+      </tr>
+      <tr>
+        <th>ID</th>
+        <th>Content</th>
+        <th>Correct</th>
+        <th>Created at</th>
+        <th>Updated at</th>
+      </tr>
+      <% @word.options.each do |option| %>
+        <tr>
+          <td><%= option.id %></td>
+          <td><%= option.content %></td>
+          <td><%= option.correct %></td>
+          <td><%= option.created_at.strftime("%Y/%m/%d") %></td>
+          <td><%= option.updated_at.strftime("%B %e %Y") %></td>
+        </tr>
+      <% end %>
+    </table>
+  </aside>
+  <aside class="col-md-4">
+    <%= link_to t("links.word.edit"),edit_admin_word_path(@word), class: "btn btn-primary" %>
+    <%= link_to t("links.word.delete"),
+      [:admin, @word], method: :delete, data: {confirm: "You sure?"}, class: "btn btn-primary" %>
+  </aside>
+</div>
