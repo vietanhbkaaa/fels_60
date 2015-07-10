@@ -18,6 +18,10 @@ class Lesson < ActiveRecord::Base
     answers.select{|answer| answer.option.correct? unless answer.option.nil?}.count
   end
 
+  def learned_words_count
+    answers.select{|answer| answer unless answer.option.nil?}.count
+  end
+
   private
   def set_words
     words = course.words.order("RANDOM()").limit Settings.per_lesson
