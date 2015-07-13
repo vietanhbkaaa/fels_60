@@ -2,5 +2,5 @@
 <h1><%= @user.name %></h1>
 <span>
   Learned
-  <%= pluralize(@user.lessons.map{|lesson| lesson.answers.count}.sum, "word") %>
+  <%= pluralize(@user.lessons.map{|lesson| lesson.learned_words_count}.sum, "word") %>
 </span>

@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
 
   resources :users, except: :destroy do
-    match "/:relationship" => "relationships#index", as: :relationship, via: :get
+    match "/:relationship" => "relationships#index", as: :relationship,
+      via: :get, constraints: {relationship: /(following|followers)/}
   end
   resources :relationships, only: [:create, :destroy]
   resources :lessons, only: [:create, :show, :destroy, :update] do

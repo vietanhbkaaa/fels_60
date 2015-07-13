@@ -44,6 +44,9 @@ en:
       new: "New Word"
       edit: "Edit Word"
       delete: "Delete Word"
+    users: "Users"
+    user:
+      delete: "Delete User"
   messages:
     welcome: "Welcome to Framgia Elearning System"
     log_in:
@@ -78,6 +81,9 @@ en:
         success: "Word was successfully updated."
       destroy:
         success: "Word was successfully deleted."
+    user:
+      destroy:
+        success: "User was successfully deleted."
 
   buttons:
     course:
@@ -93,3 +99,4 @@ en:
     words: "words"
     word:
       new: "New Word"
+    users: "Users"

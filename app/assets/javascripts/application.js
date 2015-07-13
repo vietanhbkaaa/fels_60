@@ -37,3 +37,14 @@ function add_fields(link, association, content) {
   regexp = new RegExp(expression, 'g');
   $(link).parent().before(content.replace(regexp, association + "_attributes][" + new_id + "]"));
 }
+
+var countChecked = function() {
+  var n = $( "input:checked" ).length;
+  var num_words = $( "#lesson_stats" ).data("num-words");
+  $( "#lesson_stats" ).html( n + "/" + num_words);
+};
+
+$(document).ready(function(){
+  countChecked();
+  $("input").on("click",countChecked );
+});
