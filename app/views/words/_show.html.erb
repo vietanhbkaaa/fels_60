@@ -1,0 +1,18 @@
+<div class="col-md-3 col-sm-offset-8">
+  <%= form_tag user_words_path, method: "get" do %>
+    <% courses = current_user.courses.pluck :name, :id %>
+    <% courses = courses.uniq.select{|course| :id} %>
+    <%= select_tag :course_id, options_for_select(courses, params[:course_id]) %>
+    <div class="radio-inline">
+      <%= radio_button_tag :state, t("state.words.all"), checked: true %>
+      <%= label_tag :state_all, t("state.words.all") %>
+      <br>
+      <%= radio_button_tag :state, t("state.words.learned") %>
+      <%= label_tag :state_old, t("state.words.learned") %>
+      <br>
+      <%= radio_button_tag :state, t("state.words.notlearned") %>
+      <%= label_tag :state_new, t("state.words.notlearned") %>
+      <%= submit_tag t("state.words.search"), name: nil %>
+    </div>
+  <% end %>
+</div>

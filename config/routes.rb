@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
 
+
   resources :users, except: :destroy do
+    resources :words
     match "/:relationship" => "relationships#index", as: :relationship,
       via: :get, constraints: {relationship: /(following|followers)/}
   end
@@ -26,7 +28,6 @@ Rails.application.routes.draw do
     resources :courses
     resources :words
   end
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
