@@ -46,5 +46,5 @@ var countChecked = function() {
 
 $(document).ready(function(){
   countChecked();
-  $("input").on("click",countChecked );
+  $("input").on("click", countChecked);
 });

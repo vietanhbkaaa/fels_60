@@ -4,15 +4,12 @@
     <% courses = courses.uniq.select{|course| :id} %>
     <%= select_tag :course_id, options_for_select(courses, params[:course_id]) %>
     <div class="radio-inline">
-      <%= radio_button_tag :state, t("state.words.all"), checked: true %>
-      <%= label_tag :state_all, t("state.words.all") %>
-      <br>
-      <%= radio_button_tag :state, t("state.words.learned") %>
-      <%= label_tag :state_old, t("state.words.learned") %>
-      <br>
-      <%= radio_button_tag :state, t("state.words.notlearned") %>
-      <%= label_tag :state_new, t("state.words.notlearned") %>
-      <%= submit_tag t("state.words.search"), name: nil %>
+      <% Settings.values.each do |value| %>
+        <br>
+        <%= radio_button_tag :state, value, checked = (params[:state] == value||params[:state].blank?) %>
+        <%= label_tag :value, value  %>
+      <% end %>
+      <%= submit_tag t("state.words.search"), name: nil%>
     </div>
   <% end %>
 </div>

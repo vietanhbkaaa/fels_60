@@ -9,4 +9,7 @@ per_page:
   word: 5
 per_lesson: 20
 relationships: ["following", "followers"]
-
+values:
+  - "all"
+  - "learned"
+  - "not_learned"
