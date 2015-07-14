@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <%= image_tag answer.option.try(:correct).to_s + ".png", alt: answer.option.try(:correct).to_s %>
+    <%= image_tag (answer.option.try(:correct?)||nil?).to_s + ".png", alt: (answer.option.try(:correct?)||nil?).to_s %>
   </td>
   <td>
     <span><%= answer.word.content %></span>
